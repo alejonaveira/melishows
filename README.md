@@ -4,6 +4,16 @@ Este proyecto fue realizado para el challenge de MercadoLibre en Agosto 2022.
 
 Se trata de una API Rest, desarrollada con java 11 sobre spring-boot y JPA.
 
+### Entorno productivo
+
+https://melishows-360503.rj.r.appspot.com/meli/
+
+
+### Colección de postman para pruebas
+
+[colección de postman](docs/MELI_Shows.postman_collection.json)
+
+---
 ## Modelo
 
 El modelo de datos es el siguiente:
@@ -38,7 +48,7 @@ Para la publicación de la aplicación en GCP, se optó por una base de datos H2
 
 ## Pruebas
 
-Se adjunta una [colección de postman](docs/MELI_Shows.postman_collection.json) para ejecutar pruebas. 
+En la carpeta de documentación de este repo se disponibiliza una [colección de postman](docs/MELI_Shows.postman_collection.json) para ejecutar pruebas. 
 Tener en cuenta que se debe definir la variable de entorno **baseurl**, que se usa como prefijo de todas las operaciones.
 
 ---
