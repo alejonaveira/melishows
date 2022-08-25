@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "5ea8c54f-a92a-4428-8272-97a15233c197",
+		"name": "MELI Shows",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2713171"
+	},
+	"item": [
+		{
+			"name": "All Theatres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/theatres",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"theatres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Theatre By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/theatre/3",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"theatre",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/events",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtered Events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/events?name=SENDA&eventCategory=RECITAL&fromDate=2022-08-01T10:00:00.000&toDate=2022-08-26T10:00:00.000&fromPrice=1000&toPrice=9000",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"events"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "SENDA"
+						},
+						{
+							"key": "eventCategory",
+							"value": "RECITAL"
+						},
+						{
+							"key": "fromDate",
+							"value": "2022-08-01T10:00:00.000"
+						},
+						{
+							"key": "toDate",
+							"value": "2022-08-26T10:00:00.000"
+						},
+						{
+							"key": "fromPrice",
+							"value": "1000"
+						},
+						{
+							"key": "toPrice",
+							"value": "9000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/shows/38",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"shows",
+						"38"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Seats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/events/3/shows/30/seats",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"events",
+						"3",
+						"shows",
+						"30",
+						"seats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seats available",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/events/3/shows/38/avail",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"events",
+						"3",
+						"shows",
+						"38",
+						"avail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shows (filter)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/shows/38",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"shows",
+						"38"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"show\": {\n        \"id\": 789\n    },\n    \"dni\": \"30123456\",\n    \"name\": \"test prueba\",\n    \"seats\": [\n        {\"id\": 230 }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/events/3/shows/789/ticket",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"events",
+						"3",
+						"shows",
+						"789",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "http://localhost:8080/meli",
+			"type": "string"
+		}
+	]
+}

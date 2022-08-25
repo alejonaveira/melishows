@@ -1,0 +1,53 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /meli
+
+spring:
+#  jpa:
+#    database: MySQL
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    hibernate:
+#      ddl-auto: create
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#    properties:
+#      hibernate:
+#        show_sql: false
+#        use_sql_comments: true
+#        format_sql: true
+#    open-in-view: true
+#
+#  datasource:
+#    url: "jdbc:mysql://localhost:3306/melishows"
+#    username: meli
+#    password: meli
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  liquibase:
+    enabled: false
+    # changeLog: "classpath:db/changelog/db.changelog-master.xml"
+
+
+  jpa:
+    database: H2
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: false
+        use_sql_comments: true
+        format_sql: true
+    open-in-view: true
+    generate-ddl: true
+
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console.enabled: true
